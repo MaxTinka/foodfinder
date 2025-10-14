@@ -3,19 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Contact Entebbe Foodie Finder to share feedback or recommend your favorite local vendor." />
-  <meta name="author" content="Max Tinka" />
-  <title>Contact | Entebbe Foodie Finder</title>
-
+  <title>Contact Us | Entebbe Foodie Finder</title>
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
 </head>
 <body>
-  <header class="site-header">
+  <header>
     <div class="container">
       <h1>Entebbe Foodie Finder</h1>
       <nav>
-        <ul class="nav-links">
+        <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="vendors.html">Vendors</a></li>
           <li><a href="about.html">About</a></li>
@@ -26,38 +22,42 @@
   </header>
 
   <main>
-    <section class="page-header">
+    <section>
       <div class="container">
         <h2>Contact Us</h2>
-        <p>We’d love to hear from you! Share feedback or recommend a new vendor below.</p>
+        <p>
+          Have a question, suggestion, or want to feature your street food
+          business on Entebbe Foodie Finder? We’d love to hear from you!
+        </p>
+
+        <form id="contactForm" action="thankyou.html" method="get">
+          <label for="name">Full Name:</label>
+          <input type="text" id="name" name="name" placeholder="Enter your full name" required />
+
+          <label for="email">Email Address:</label>
+          <input type="email" id="email" name="email" placeholder="example@email.com" required />
+
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
       </div>
-    </section>
-
-    <section class="contact-form-section container">
-      <form id="contactForm" action="thankyou.html" method="get" class="contact-form">
-        <label for="name">Full Name:</label>
-        <input type="text" id="name" name="name" placeholder="Your full name" required />
-
-        <label for="email">Email Address:</label>
-        <input type="email" id="email" name="email" placeholder="example@email.com" required />
-
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
-
-        <label for="vendor">Recommend a Vendor (optional):</label>
-        <input type="text" id="vendor" name="vendor" placeholder="Vendor name or location" />
-
-        <button type="submit" class="btn">Submit</button>
-      </form>
     </section>
   </main>
 
   <footer>
-    <div class="container">
-      <p>&copy; 2025 Entebbe Foodie Finder | Designed and developed by Max Tinka</p>
-    </div>
+    <p>&copy; 2025 Entebbe Foodie Finder | All Rights Reserved</p>
   </footer>
 
-  <script src="js/contact.js"></script>
+  <script>
+    // Store submission data locally for display on thankyou.html
+    document.getElementById("contactForm").addEventListener("submit", (e) => {
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      localStorage.setItem("contactName", name);
+      localStorage.setItem("contactEmail", email);
+    });
+  </script>
 </body>
 </html>
