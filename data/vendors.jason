@@ -1,23 +1,32 @@
 [
   {
-    "name": "Mama's Grill",
-    "cuisine": "BBQ",
-    "location": "Entebbe Main Street",
-    "rating": 4.8,
-    "image": "https://source.unsplash.com/400x300/?bbq"
+    "name": "Mama Naki’s Rolex Stand",
+    "image": "images/mama-naki.jpg",
+    "category": "street food",
+    "description": "Famous for her mouth-watering rolex with a twist of fresh veggies and spicy sauce."
   },
   {
-    "name": "Lakeview Snacks",
-    "cuisine": "Fast Food",
-    "location": "Kitoro",
-    "rating": 4.5,
-    "image": "https://source.unsplash.com/400x300/?fast-food"
+    "name": "Entebbe Fish Point",
+    "image": "images/fish-point.jpg",
+    "category": "restaurant",
+    "description": "Fresh tilapia straight from Lake Victoria, grilled to perfection with local flavors."
   },
   {
-    "name": "Entebbe Delights",
-    "cuisine": "Ugandan Cuisine",
-    "location": "Airport Road",
-    "rating": 4.9,
-    "image": "https://source.unsplash.com/400x300/?ugandan-food"
+    "name": "Juice & Jam Smoothies",
+    "image": "images/juice-jam.jpg",
+    "category": "juice bar",
+    "description": "Refreshing natural fruit smoothies and snacks made from organic ingredients."
+  },
+  {
+    "name": "Katwe Street BBQ",
+    "image": "images/bbq.jpg",
+    "category": "street food",
+    "description": "Grilled meats and plantains served hot — a favorite for locals and visitors alike."
+  },
+  {
+    "name": "Cafe Entebbe",
+    "image": "images/cafe-entebbe.jpg",
+    "category": "cafe",
+    "description": "A cozy spot for coffee lovers serving pastries, breakfast, and light meals."
   }
 ]
