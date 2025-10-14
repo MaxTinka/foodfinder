@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact Entebbe Foodie Finder to share feedback or recommend your favorite local vendor." />
+  <meta name="author" content="Max Tinka" />
+  <title>Contact | Entebbe Foodie Finder</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Entebbe Foodie Finder</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="vendors.html">Vendors</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <p>We’d love to hear from you! Share feedback or recommend a new vendor below.</p>
+      </div>
+    </section>
+
+    <section class="contact-form-section container">
+      <form id="contactForm" action="thankyou.html" method="get" class="contact-form">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your full name" required />
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" placeholder="example@email.com" required />
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+
+        <label for="vendor">Recommend a Vendor (optional):</label>
+        <input type="text" id="vendor" name="vendor" placeholder="Vendor name or location" />
+
+        <button type="submit" class="btn">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Entebbe Foodie Finder | Designed and developed by Max Tinka</p>
+    </div>
+  </footer>
+
+  <script src="js/contact.js"></script>
+</body>
+</html>
