@@ -1,272 +1,142 @@
-/* ==============================
-   GLOBAL STYLES
-============================== */
-:root {
-  --primary-color: #e63946;      /* Tomato red */
-  --secondary-color: #457b9d;    /* Calm blue */
-  --accent-color: #f1faee;       /* Light cream */
-  --dark-color: #1d3557;         /* Deep navy */
-  --text-color: #333;
-  --max-width: 1100px;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
+/* General Styles */
 body {
-  font-family: "Poppins", Arial, sans-serif;
-  color: var(--text-color);
-  background-color: var(--accent-color);
+  font-family: 'Poppins', sans-serif;
   line-height: 1.6;
-}
-
-/* ==============================
-   HEADER & NAVIGATION
-============================== */
-header {
-  background: var(--dark-color);
-  color: white;
-  padding: 1rem 0;
-}
-
-header .container,
-footer .container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-header h1 {
-  font-size: 1.8rem;
-  margin-bottom: 0.3rem;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-nav a:hover,
-nav a.active {
-  color: var(--primary-color);
-}
-
-/* ==============================
-   HERO SECTION
-============================== */
-.hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../images/entebbe-food-bg.jpg") center/cover no-repeat;
-  color: white;
-  text-align: center;
-  padding: 5rem 1rem;
-}
-
-.hero h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
-}
-
-.btn {
-  background: var(--primary-color);
-  color: white;
-  padding: 0.7rem 1.4rem;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background 0.3s ease;
-}
-
-.btn:hover {
-  background: #b92c38;
-}
-
-/* ==============================
-   FEATURED / CONTENT SECTIONS
-============================== */
-main {
-  padding: 2rem 1rem;
+  margin: 0;
+  color: #333;
+  background-color: #fdfdfd;
 }
 
 .container {
-  max-width: var(--max-width);
+  width: 90%;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-section {
-  margin-bottom: 2.5rem;
+/* Header */
+header {
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-section h2,
-section h3 {
-  color: var(--dark-color);
-  margin-bottom: 1rem;
+header .header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
 }
 
-/* ==============================
-   VENDOR CARDS
-============================== */
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+}
+
+header nav ul li a.active,
+header nav ul li a:hover {
+  color: #ff6f00;
+}
+
+/* Hero Section */
+.hero {
+  background-image: url('../images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+  padding: 120px 20px;
+  position: relative;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 0;
+}
+
+.hero .hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+}
+
+.hero .btn {
+  background-color: #ff6f00;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.hero .btn:hover {
+  background-color: #ff9900;
+}
+
+/* Featured Vendors */
+.featured {
+  padding: 60px 0;
+}
+
+.featured h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
 .vendor-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
+  gap: 25px;
 }
 
 .vendor-card {
-  background: white;
-  border-radius: 15px;
+  background-color: #fff;
+  border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .vendor-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 15px rgba(0,0,0,0.2);
 }
 
-.vendor-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
-.vendor-card h3 {
-  font-size: 1.2rem;
-  padding: 1rem;
-}
-
-.vendor-card p {
-  padding: 0 1rem 1rem;
-  color: #555;
-}
-
-/* ==============================
-   ABOUT PAGE
-============================== */
-.about-content article {
-  background: white;
-  margin-bottom: 1.5rem;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-.about-cta {
-  text-align: center;
-  background: var(--secondary-color);
-  color: white;
-  padding: 2rem 1rem;
-  border-radius: 12px;
-}
-
-.about-cta a.btn {
-  background: white;
-  color: var(--dark-color);
-  font-weight: bold;
-}
-
-/* ==============================
-   CONTACT FORM
-============================== */
-form {
-  background: white;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-form label {
-  display: block;
-  margin-top: 1rem;
-  font-weight: 600;
-}
-
-form input,
-form textarea,
-form select {
-  width: 100%;
-  padding: 0.6rem;
-  margin-top: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
-}
-
-form button {
-  margin-top: 1.5rem;
-  width: 100%;
-  background: var(--primary-color);
-  color: white;
-  border: none;
-  padding: 0.8rem;
-  font-size: 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-form button:hover {
-  background: #b92c38;
-}
-
-/* ==============================
-   FOOTER
-============================== */
+/* Footer */
 footer {
-  background: var(--dark-color);
-  color: white;
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
   text-align: center;
-  padding: 1.5rem 1rem;
-  margin-top: 2rem;
 }
 
-footer a {
-  color: var(--primary-color);
-  text-decoration: none;
+footer .social img {
+  width: 25px;
+  margin: 0 5px;
+  vertical-align: middle;
+  transition: transform 0.3s;
 }
 
-/* ==============================
-   RESPONSIVE DESIGN
-============================== */
-@media (max-width: 768px) {
-  header .container,
-  footer .container {
-    text-align: center;
-  }
-
-  nav ul {
-    justify-content: center;
-  }
-
-  .hero h2 {
-    font-size: 1.6rem;
-  }
-
-  .about-content article {
-    padding: 1rem;
-  }
-
-  form {
-    padding: 1.5rem;
-  }
+footer .social img:hover {
+  transform: scale(1.2);
 }
