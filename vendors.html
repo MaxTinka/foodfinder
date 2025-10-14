@@ -1,33 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vendors - Local Foodie Finder</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore all local food vendors in Entebbe, including street food stands, cafes, and restaurants." />
+  <meta name="author" content="Max Tinka" />
+  <title>Vendors | Entebbe Foodie Finder</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
 </head>
 <body>
-  <header>
-    <h1>Local Foodie Finder</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="vendors.html">Vendors</a>
-    </nav>
+  <header class="site-header">
+    <div class="container">
+      <h1>Entebbe Foodie Finder</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="vendors.html" class="active">Vendors</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section class="vendors-list">
-      <h2>All Vendors</h2>
-      <div id="all-vendors" class="vendor-cards">
+    <!-- Page Intro -->
+    <section class="page-header">
+      <div class="container">
+        <h2>Explore Local Vendors</h2>
+        <p>Discover Entebbe’s best food spots — from street stands to local restaurants.</p>
+      </div>
+    </section>
+
+    <!-- Filter & Search -->
+    <section class="filters container">
+      <input type="text" id="searchInput" placeholder="Search by name..." aria-label="Search vendors by name" />
+      <select id="filterCategory" aria-label="Filter vendors by category">
+        <option value="all">All Categories</option>
+        <option value="street food">Street Food</option>
+        <option value="restaurant">Restaurant</option>
+        <option value="cafe">Cafe</option>
+        <option value="juice bar">Juice Bar</option>
+      </select>
+    </section>
+
+    <!-- Vendor List -->
+    <section class="vendor-list container">
+      <div id="vendorContainer" class="vendor-cards">
         <!-- Vendor cards will load here -->
       </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Local Foodie Finder, Entebbe</p>
+    <div class="container">
+      <p>&copy; 2025 Entebbe Foodie Finder | Designed and developed by Max Tinka</p>
+    </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/vendors.js"></script>
 </body>
 </html>
