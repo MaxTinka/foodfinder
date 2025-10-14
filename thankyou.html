@@ -5,14 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Thank You | Entebbe Foodie Finder</title>
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
 </head>
 <body>
-  <header class="site-header">
+  <header>
     <div class="container">
       <h1>Entebbe Foodie Finder</h1>
       <nav>
-        <ul class="nav-links">
+        <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="vendors.html">Vendors</a></li>
           <li><a href="about.html">About</a></li>
@@ -23,41 +22,29 @@
   </header>
 
   <main>
-    <section class="thankyou-section container">
-      <h2>Thank You for Contacting Us!</h2>
-      <p>We’ve received your message and appreciate your time.</p>
-
-      <div id="submittedData" class="submitted-data">
-        <!-- Form data will appear here -->
+    <section>
+      <div class="container" style="text-align: center;">
+        <h2>Thank You!</h2>
+        <p id="thankMessage">Your message has been received.</p>
+        <p>We’ll get back to you as soon as possible.</p>
+        <a href="index.html" class="btn">Back to Home</a>
       </div>
-
-      <a href="index.html" class="btn">Return to Home</a>
     </section>
   </main>
 
   <footer>
-    <div class="container">
-      <p>&copy; 2025 Entebbe Foodie Finder | Designed and developed by Max Tinka</p>
-    </div>
+    <p>&copy; 2025 Entebbe Foodie Finder | All Rights Reserved</p>
   </footer>
 
   <script>
-    // Extract query parameters and display them
-    const params = new URLSearchParams(window.location.search);
-    const name = params.get("name");
-    const email = params.get("email");
-    const message = params.get("message");
-    const vendor = params.get("vendor");
-
-    const output = `
-      <h3>Submitted Information:</h3>
-      <p><strong>Name:</strong> ${name}</p>
-      <p><strong>Email:</strong> ${email}</p>
-      <p><strong>Message:</strong> ${message}</p>
-      ${vendor ? `<p><strong>Recommended Vendor:</strong> ${vendor}</p>` : ""}
-    `;
-
-    document.getElementById("submittedData").innerHTML = output;
+    // Retrieve user name from local storage
+    const name = localStorage.getItem("contactName");
+    if (name) {
+      document.getElementById("thankMessage").textContent =
+        `Thank you, ${name}! Your message has been received.`;
+      localStorage.removeItem("contactName");
+      localStorage.removeItem("contactEmail");
+    }
   </script>
 </body>
 </html>
